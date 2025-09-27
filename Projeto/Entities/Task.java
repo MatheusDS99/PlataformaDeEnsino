@@ -1,4 +1,35 @@
 package Entities;
 
-public class Task {
+public class Task extends Lesson {
+    private String description;
+    private int questionCount;
+
+    public Task(){
+        super();
+    }
+
+    public Task(String title, String description, int questionCount){
+        super(title);
+        this.description=description;
+        this.questionCount=questionCount;;
+    }
+
+    public void setDescription(String description){
+        this.description=description;
+    }
+    public String getDescription(){
+        return this.description;
+    }
+
+    public void setQuestionCount(int questionCount){
+        this.questionCount=questionCount;
+    }
+    public int getQuestionCount(){
+        return this.questionCount;
+    }
+
+    @Override
+    public int duration() {
+        return questionCount*300;
+    }
 }
